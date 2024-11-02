@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+  text-align: center;
+}
+
+.usernames li {
+  padding: 8px;
+  border: 2px dashed tomato;
+  text-transform: uppercase;
+}
+
+.usernames li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.blondegirl-dark {
+  width: 1000px;
+  height: 1000px;
+  background-color: black;
+  position: absolute;
+}

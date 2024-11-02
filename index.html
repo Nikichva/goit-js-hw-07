@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+
+    <button id="single" class="btn">SINGLE CALLBACK</button>
+    <hr>
+    <button id="multiple" class="btn">MULTIPLE CALLBACKS</button>
+
+    <div class="blondegirl">
+      
+    </div>
+  <h1>Usernames</h1>
+  <ul class="usernames">
+    <li>Mango</li>
+  </ul>
+
+  <script id="Mouse tracker example" defer>
+
+    const spawnBox = () => {
+    const box = document.createElement("div");
+    box.style.width = "200px";
+    box.style.height = "200px";
+    box.style.backgroundColor = "red";
+    box.style.position = "absolute";
+    document.body.append(box);
+    return box;
+  };
+    
+const tracker = spawnBox();
+document.body.append(tracker);
+
+
+    document.addEventListener("mousemove", ({ clientX: x, clientY: y}) => {
+      tracker.style.left = `${x}px`;
+      tracker.style.top = `${y}px`;
+    });
+
+  </script>
+</body>
+</html>
