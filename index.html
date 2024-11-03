@@ -8,15 +8,59 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-
+  <div class="container  ">
+    <div class="form1">
+      <form>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Country</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <input type="submit" value="Submit">
+        <button id="close" class="btn"> Close </button>
+      </div>
+      </form>
+    </div>
+  </div>
 
     <button id="single" class="btn">SINGLE CALLBACK</button>
     <hr>
     <button id="multiple" class="btn">MULTIPLE CALLBACKS</button>
 
-    <div class="blondegirl">
-      
-    </div>
+  
   <h1>Usernames</h1>
   <ul class="usernames">
     <li>Mango</li>
@@ -24,24 +68,24 @@
 
   <script id="Mouse tracker example" defer>
 
-    const spawnBox = () => {
-    const box = document.createElement("div");
-    box.style.width = "200px";
-    box.style.height = "200px";
-    box.style.backgroundColor = "red";
-    box.style.position = "absolute";
-    document.body.append(box);
-    return box;
-  };
+//     const spawnBox = () => {
+//     const box = document.createElement("div");
+//     box.style.width = "200px";
+//     box.style.height = "200px";
+//     box.style.backgroundColor = "red";
+//     box.style.position = "absolute";
+//     document.body.append(box);
+//     return box;
+//   };
     
-const tracker = spawnBox();
-document.body.append(tracker);
+// const tracker = spawnBox();
+// document.body.append(tracker);
 
 
-    document.addEventListener("mousemove", ({ clientX: x, clientY: y}) => {
-      tracker.style.left = `${x}px`;
-      tracker.style.top = `${y}px`;
-    });
+//     document.addEventListener("mousemove", ({ clientX: x, clientY: y}) => {
+//       tracker.style.left = `${x}px`;
+//       tracker.style.top = `${y}px`;
+//     });
 
   </script>
 </body>
