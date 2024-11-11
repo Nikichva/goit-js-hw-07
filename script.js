@@ -51,11 +51,13 @@ singleBtn2.addEventListener("click", handleClick2);
 const multiBtn = document.querySelector("#multiple");
 const closeBtn = document.querySelector("#close");
 
-const formOpener = () => {
+const formOpener = (event) => {
   const element = document.querySelector(".form1");
   element.classList.toggle("form1-active"); // добавляет "active", если его нет, или убирает, если он есть
   console.log("First callback!");
+  event.preventDefault();
 };
+
 const secondCallback = () => {
   console.log("Second callback!");
 };
@@ -79,3 +81,53 @@ const buttonClicker = () => {
 };
 const button = document.querySelector("#myButton");
 button.addEventListener("click", buttonClicker);
+
+const inputField = document.querySelector("#lname");
+const message = document.querySelector("#message");
+
+const inputFieldFname = document.querySelector("#fname");
+const nmessage = document.querySelector("#nmessage");
+
+// Обработчик события focus
+inputFieldFname.addEventListener("focus", () => {
+  nmessage.textContent = "Начинайте вводить текст...";
+});
+
+// Обработчик события blur
+inputFieldFname.addEventListener("blur", () => {
+  nmessage.textContent = "Ввод завершён.";
+});
+
+// Обработчик события focus
+inputField.addEventListener("focus", () => {
+  message.textContent = "Начинайте вводить текст...";
+});
+
+// Обработчик события blur
+inputField.addEventListener("blur", () => {
+  message.textContent = "Ввод завершён.";
+});
+
+const toggleButton = document.querySelector("#toggleButton");
+const removeHandlerButton = document.querySelector("#removeHandlerButton");
+
+function changeBackgroundColor() {
+  document.body.style.backgroundColor =
+    document.body.style.backgroundColor === "lightblue" ? "white" : "lightblue";
+}
+
+// Добавляем обработчик события "click" для изменения цвета фона
+toggleButton.addEventListener("click", changeBackgroundColor);
+
+// Удаляем обработчик при клике на другую кнопку
+removeHandlerButton.addEventListener("click", () => {
+  toggleButton.removeEventListener("click", changeBackgroundColor);
+  alert("Обработчик изменения цвета был отключён.");
+});
+
+const submitButton = document.querySelector("#submitButton");
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  alert("Форма заполнена!");
+  formOpener();
+});
