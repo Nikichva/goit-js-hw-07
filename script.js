@@ -35,8 +35,18 @@ const handleClick = () => {
   console.log("click event listener callback");
 };
 
-singleBtn.addEventListener("click", handleClick);
+const singleBtn2 = document.querySelector("#butt");
 
+singleBtn.addEventListener("click", handleClick);
+const list2 = document.querySelector(".usernames2");
+
+const handleClick2 = () => {
+  const headerText = document.createElement("h2");
+  list2.append(headerText);
+  list2.innerHTML = "<h2>Подзаголовок</h2><p>Новый параграф</p>";
+  list2.classList.toggle("usernames-hidden");
+};
+singleBtn2.addEventListener("click", handleClick2);
 // ===============================================
 const multiBtn = document.querySelector("#multiple");
 const closeBtn = document.querySelector("#close");
@@ -60,3 +70,12 @@ const chat = document.createElement("input");
 chat.value = "ChatGpt";
 chat.type = "text";
 document.body.appendChild(chat);
+
+const buttonClicker = () => {
+  // Изменяем текст кнопки
+  button.textContent = "Спасибо!";
+  // Добавляем стиль
+  button.style.fontWeight = "bold";
+};
+const button = document.querySelector("#myButton");
+button.addEventListener("click", buttonClicker);

@@ -104,3 +104,8 @@ input[type="submit"],
     margin-top: 0;
   }
 }
+
+.usernames-hidden {
+  /* visibility: hidden; */
+  position: absolute;
+}
